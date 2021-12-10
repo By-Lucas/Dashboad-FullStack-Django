@@ -1,17 +1,40 @@
-## Ecomerce completo + Delivery
+## Dashboard FullStack completa
 
-**Projeto criado em desenvolvimento...**
+**Projeto finalizado | Informações**
 
-Esse projeto é justamente para pessoas que querem vender seus produtos pela internet
-e junto a isso fazer o delivery, mas isso fica a questão
+- Cadastro de cliente
 
-" ALGUNS COMANDOS CITADOS ABAIXO "
+- Menu interatico mostrando quantidade de pessoas bloqueadas, liberadas ou aguardando liberação
 
-Instalar as bibliotecas: 
-pip install -r requirements.txt
+- Pagina mostrando todos os dados do cliente
 
-Rodar aplicação: 
-python manage.py runserver
+- Pagina de login
+
+- Pagina de Logount
+
+- Salva o nome da pessoa que cadastrou ou liberou o cliente
+
+- Dashboard intuitiva e responsiva, utilizando **Bootstrap**
 
 
 **Entre em cotato sempre que precisar [Whatsapp](https://api.whatsapp.com/send?phone=5574981199190&text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%20Pode%20me%20ajudar%20%3F)**
+
+## Dashboard FullStack complete
+
+**Project completed | Information**
+
+- Customer registration
+
+- Interactive menu showing the number of people blocked, released or awaiting release
+
+- Page showing all customer data
+
+- Login page
+
+- Login page
+
+- Saves the name of the person who registered or released the client
+
+- Intuitive and responsive dashboard, using **Bootstrap**
+
+**Get in contact whenever you need [Whatsapp](https://api.whatsapp.com/send?phone=5574981199190&text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%20Pode%20me%20ajudar%20%3F)
