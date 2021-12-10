@@ -1,0 +1,6 @@
+PRECISA INSTALAR A BILIOTECA ABAIXO
+
+pip install -r requeriments.txt
+
+RODAR A APLICACAO DJANGO
+pyton manage.py runserver

@@ -1,0 +1,143 @@
+{% extends "base.html" %} {% block conteudo %}
+<!--extensão de um template-->
+
+<div class="container-fluid">
+    
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">{{ nome_pagina }}</h1>
+        
+        <!-- Para selecionar o nome
+        da pagina escolhido dentro da view do django-->
+        <a href="{% url 'registrar_visitante' %}" class=" btn btn-primary btn-solid btn-sm">
+            <span class="text"> Registrar cliente</span>
+
+            <samp class="icon text-white-50">
+                <i class="fas fa-user-plus"></i>
+            </samp>
+        </a>
+
+    </div>
+
+    {% if messages %} {% for mensagem in messages %}
+    <div class="alert alert-success" role="alert">
+        {{ mensagem }}
+    </div>
+    {% endfor %} {% endif %}
+
+    <div class="row">
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Clientes aguardando autorização</div>
+                            <div class="h5 mb-0 font-weight-bold  text-warning">{{ visitantes_aguardando }}</div>
+                            <!--ESSE ERA O CERTO EM TODOS = class="h5 mb-0 font-weight-bold  text-gray-900-->
+                        </div>
+
+                        <div class="col-auto">
+                            <i class="fas fa-user-lock fa-2x text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-1">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Clientes ativo no servidor</div>
+                            <div class="h5 mb-0 font-weight-bold text-success">{{ visitantes_em_visita }}</div>
+                        </div>
+
+                        <div class="col-auto">
+                            <i class="fas fa-user-check fa-2x text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Clientes finalizadas</div>
+                            <div class="h5 mb-0 font-weight-bold text-danger">{{ visitantes_finalizado }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-user-clock fa-2x text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Clientes registrados no mês atual</div>
+                            <div class="h5 mb-0 font-weight-bold text-info">{{ visitantes_mes }}</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-600"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-sm-flex align-items-center justify-content-between mb-2">
+            <h6 class="m-0 font-weight-bold text-primary">Cadastros recentes</h6>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Nome completo</th>
+                        <th>CPF</th>
+                        <th>Horário de cadastro</th>
+                        <th>Status</th>
+                        <th>Horário da autorização</th>
+                        <th>Autorizado por</th>
+                        <th>Mais informações</th>
+                    </thead>
+
+                    <tbody>
+                        <!-- Essas opcoes serve para mostrar informacoes
+                        na pagina inicial da dashboard-->
+                        <!-- Chamar todas as funcoes
+                        criadas no Django e preencher,
+                        para cada visitante dentro da variavel todos_visitantes
+                        ele deve repetir essa estrutura-->
+                        {% for visitante in todos_visitantes %}
+                        <tr>
+                            <td>{{ visitante.nome_completo }}</td>
+                            <td>{{ visitante.get_cpf }}</td>
+                            <td>{{ visitante.horario_chegada }}</td>
+                            <td>{{ visitante.get_status_display }}</td>
+                            <td>{{ visitante.get_horario_autorizacao }}</td>
+                            <td>{{ visitante.get_morador_responsavel }}</td>
+                            <td>
+                                <a href="{% url 'informacoes_visitantes' id=visitante.id %}">
+                                    Ver informações
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <!-- FInalizar as funcoes adicionadas, obrigatório-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}

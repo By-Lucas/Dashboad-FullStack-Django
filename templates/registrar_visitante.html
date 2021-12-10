@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+<!--Carregar o pacote de widgets-->
+
+{% block conteudo %}
+<div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">{{ nome_pagina }}</h1>
+    </div>
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <h4 class="mb-3 text-primary">
+                Formulário para registro de novo Cliente
+            </h4>
+            <p class="mb-5 ml-1">
+                <small>
+                    O asteristico {*} indica que o campo e obrigatório!
+                </small>
+            </p>
+
+
+            <!-- MOSTRAR MENSAGEM DE ERRO-->
+            <!--
+            {% if form.erros %}
+                {% for field in form %}
+                    {% if field.erros %}
+                        {% for erro in field.erros %}
+                            <div class="alert alert-warning">
+                                {{ erro }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            -->
+
+            {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger" role="alert">
+                            <strong>{{ error|escape }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+
+            <form method="post">
+                <div class=" form-row">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        <div class=" form-group col-md-12">
+                            <!--se a opcao for verdadeira ele carrega o que estar dentro o if e endif
+                            AOPCAO SERVE PRA MOSTRAR COM * AS OPCOES QUE FOREM OBRIGATORIAS-->
+                            <label> {{ field.label }} {% if field.field.required %} * {% endif %} </label>
+                            {% render_field field placeholder=field.label class="form-control" %}
+                        </div>
+                    {% endfor %}
+                    <!-- Mostra onde o loop termina-->
+                </div>
+                <div class="text-right">
+                    <a href="{%url 'index' %}" class="btn btn-secondary text-white" type="button">
+                        <span class="text">Cancelar</span>
+                    </a>
+
+                    <button class="btn btn-primary" type="submit">
+                        <span class="text">Registrar Cliente</span>
+                    </button>
+                </div>
+        </div>
+    </div>
+</div>
+
+{% endblock conteudo %}
