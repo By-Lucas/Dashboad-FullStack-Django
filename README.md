@@ -37,4 +37,4 @@
 
 - Intuitive and responsive dashboard, using **Bootstrap**
 
-**Get in contact whenever you need [Whatsapp](https://api.whatsapp.com/send?phone=5574981199190&text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%20Pode%20me%20ajudar%20%3F)
+**Get in contact whenever you need [Whatsapp](https://api.whatsapp.com/send?phone=5574981199190&text=Ol%C3%A1%20Lucas%2C%20tudo%20bem%3F%20Pode%20me%20ajudar%20%3F)**
