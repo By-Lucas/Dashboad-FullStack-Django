@@ -2,6 +2,11 @@
 
 **Projeto finalizado | Informações**
 
+<p align="center">
+  <img width="470" src="/sistemy-gif.gif">
+</p>
+
+
 - Cadastro de cliente
 
 - Menu interatico mostrando quantidade de pessoas bloqueadas, liberadas ou aguardando liberação
