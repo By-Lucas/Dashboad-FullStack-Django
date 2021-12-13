@@ -3,7 +3,7 @@
 **Projeto finalizado | Informações**
 
 <p align="center">
-  <img width="470" src="/sistemy-gif.gif">
+  <img width="470" src="/sistem-gif.gif">
 </p>
 
 
