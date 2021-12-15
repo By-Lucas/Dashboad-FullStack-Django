@@ -6,6 +6,13 @@
   <img width="470" src="/sistem-gif.gif">
 </p>
 
+# Como rodar a aplicação
+ - Criar um  **ambiente virtual**, pode ver como criar pesquisando no google dependendo do seu sistema operacional
+ - Para rodar você deve usar o  **pip install -r requirements.txt** para instalar as bibliotecas
+ - Após instalar as bibliotecas é só rodar a aplicação **python manage.py runserver**
+ 
+ # O servidor vai rodar em : http://127.0.0.1:8000/
+
 
 - Cadastro de cliente
 
